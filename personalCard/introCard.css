@@ -1,0 +1,150 @@
+/*body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+p, a{
+    font-family: Arial;
+    color: white;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 4px solid rgb(186, 186, 186);
+    padding: 30px 10px;
+    border-radius: 15px;
+    background-color: #777777;
+}
+.personal-info{
+    display: flex;
+    gap: 20px;
+}
+.description{
+    padding: 10px 30px;
+}
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}*/
+
+/* Reset some default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Card container */
+.card {
+    width: 500px;
+    background-color: #5e5e5e;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Personal info section */
+.personal-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Profile image */
+.image img {
+    border-radius: 10px;
+    width :115px;
+    height :130px;
+    margin-left: 5px;
+}
+
+/* Text styling */
+p {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Highlight name */
+.details p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Description */
+.description {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Contact section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.connect-title {
+    color: #d8d8d8;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.connect-title:hover {
+    color: #80a6f9;
+}
+
+/* Social links */
+.social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+/* Hover effect */
+.social:hover {
+    background-color: #454545;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Link hover */
+a:hover {
+    color: #4da6ff;
+}
