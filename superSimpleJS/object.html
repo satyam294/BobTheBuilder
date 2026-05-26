@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    const product = {
+        'name' : 'Shoes',
+        'price' : 500,
+        'brand' : 'Nike',
+        fun1 : function(){
+            console.log(this.brand);
+        }
+    }
+
+    console.log(product);
+    const jsonString = JSON.stringify(product);
+    console.log(jsonString);
+
+    const objAgain = JSON.parse(jsonString);
+    console.log(objAgain);
+
+    //local storage : data doesnt get deleted on refresh like the variables
+    */
+
+    //since strings are also objects, they also have properties and methods
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    //autoboxing - js automatically puts a box around the give string - makes object
+    // i.e., converts the string into an object to give various methods and properties
+    // works with everything except null and undefined
+
+    //copy by reference -> single object in heap, multiple references
+
+    const o1 = {
+        name: 'Hello'
+    }
+
+    const o2 = o1; //copy references
+
+    const o3 = {
+        name: 'Hello'
+    }
+    
+    //o1 = o3; error (const declaration)
+    //const with object? can change the insides, but not reassign to some other object.
+
+    console.log(o1 === o3);  //false : compared references
+    console.log(o1 === o2); //true: shared obejct references
+
+   // const name = o1.name;
+    const {name} = o1;  //destructuring
+
+    const o4 = {
+        Name: "hi",
+        price: 300,
+        brand: 'Nike'
+    }
+    const {Name, price, brand} = o4; //destructuring
+
+    //shorthand property, methods
+    const o5 = {
+        //Name = Name
+        Name,
+        price,
+        brand,
+        //method: function fun1(){
+        //    console.log('Method');
+        //}
+        method(){
+            console.log('method')
+        }
+    }
+</script>
+</html>
