@@ -6,7 +6,7 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <p>Pick Your Move</p>
+    <p>Rock Paper Scissors</p>
     <button onclick=" playGame('rock')" id="rock">
         Rock
     </button>
@@ -17,18 +17,12 @@
         Scissors
     </button>
 
-    <button onclick = "
-        score.win = 0;
-        score.loss = 0;
-        score.tie = 0; 
-        localStorage.removeItem('score');  //remove the stored score
-    ">
+    <h2 id = 'results'>Results</h2>
+    <h2 id='moves'>Moves Made</h2>
+    <h2 id = 'scorecard'>ScoreCard</h2>
+    <button onclick = "updateScoreOnReset()">
         Reset Score
     </button>
-
-    <h2 id='cmove'>Computer Move</h2>
-    <h2 id = 'results'>Results</h2>
-    <h2 id = 'scorecard'>ScoreCard</h2>
 
 <script>
     //fetch the score object from the localStorage
@@ -43,7 +37,7 @@
 
         const random = Math.random();
 
-        const cmove = document.querySelector("#cmove");
+        const cmove = document.querySelector("#moves");
         const res = document.querySelector("#results");
         const scorecard = document.querySelector('#scorecard');
 
@@ -59,7 +53,7 @@
             computerChoice = 'scissors';
         }
 
-        cmove.innerHTML = `Computer Played: ${computerChoice}`;
+        moves.innerHTML = `You : ${move} - ${computerChoice} : Computer`;
 
         if(move === computerChoice){
             score.tie++;
@@ -82,6 +76,18 @@
 
         scorecard.innerHTML = `Win: ${score.win} Loss: ${score.loss} Tie: ${score.tie}`;
         
+    }
+    function updateScoreOnReset(){
+        score.win = 0;
+        score.loss = 0;
+        score.tie = 0; 
+        localStorage.removeItem('score');  //remove the stored score
+
+        //show the updated scorecard
+        const scorecard = document.querySelector('#scorecard');
+        scorecard.innerHTML = `Win: ${score.win} Loss: ${score.loss} Tie: ${score.tie}`;
+
+
     }
 </script>
 

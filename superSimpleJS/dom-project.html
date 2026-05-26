@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick = "
+        subscribe();
+    " class="js-subscribe-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <!-- every eventlistener like onclick, onkeydown is passed the event object-->
+    <input class="shipping-input" placeholder="Cost of Order"
+        onkeydown="if(event.key === 'Enter') calculateTotal()"
+    >
+    <button onclick = "calculateTotal()">Calculate</button>
+    <p class="shipping-charge">$ 0</p>
+
+
+    <script>
+        // window object: represents browser, i,e: webpage + outer frame: console
+        // window.document //webpage
+        // window.comsole.log('Hi')
+        // window.alert('Hey')
+        //all part of window: hence window is added by default to statements
+        
+        function subscribe(){
+            const buttonEle = document.querySelector('.js-subscribe-button')
+            if(buttonEle.innerHTML.trim() === 'Subscribe'){
+                buttonEle.innerHTML = 'Subscribed';
+            }else{
+                buttonEle.innerHTML = 'Subscribe';
+            }
+        }
+
+        function calculateTotal(){
+            const ip = document.querySelector('.shipping-input');
+            const op = document.querySelector('.shipping-charge');
+
+            let costOfOrder = Number(ip.value);
+
+            if(costOfOrder < 40){
+                costOfOrder += 10;
+            }
+            op.innerHTML = `$ ${costOfOrder}`;
+        }
+    </script>
+</body>
+</html>

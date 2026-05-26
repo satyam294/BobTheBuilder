@@ -6,7 +6,22 @@
     <title>DOM</title>
 </head>
 <body>
+    <button class = "first">Hello</button>
+    <button class = "second"> Bye </button>
     <script>
+        //DOM : connects HTML to JS, Manipulate HTML elements with JS Code.
+        //document = object of entire webpage, gives us different attributes and method to modify the webpage
+        //document.body = return whole body element, etc
+
+        const b1 = document.querySelector('.first');
+        const b2 = document.querySelector('.second');
+        
+        b1.addEventListener('click', () => {
+            b1.innerHTML = 'Hello Changed';
+        });
+        b2.addEventListener('click', () => {
+            b2.innerHTML = 'Bye Changed';
+        });
         
     </script>
 </body>
