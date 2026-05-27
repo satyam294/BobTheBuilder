@@ -4,19 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Project</title>
+    <style>
+        body {
+            font-family: Arial;  
+        }
+        .subscribe-button {
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;  
+            margin-bottom: 30px;
+        }
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+        .cost-input{
+            padding: 10px;
+        }
+
+        .calculate-button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <p>YouTube Subscribe Button</p>
     <button onclick = "
         subscribe();
-    " class="js-subscribe-button">Subscribe</button>
+    " class="subscribe-button">Subscribe</button>
 
     <p>Amazon Shipping Calculator</p>
     <!-- every eventlistener like onclick, onkeydown is passed the event object-->
-    <input class="shipping-input" placeholder="Cost of Order"
+    <input class="cost-input" placeholder="Cost of Order"
         onkeydown="if(event.key === 'Enter') calculateTotal()"
     >
-    <button onclick = "calculateTotal()">Calculate</button>
+    <button class = "calculate-button" onclick = "calculateTotal()">Calculate</button>
     <p class="shipping-charge">$ 0</p>
 
 
@@ -28,16 +59,18 @@
         //all part of window: hence window is added by default to statements
         
         function subscribe(){
-            const buttonEle = document.querySelector('.js-subscribe-button')
+            const buttonEle = document.querySelector('.subscribe-button')
             if(buttonEle.innerHTML.trim() === 'Subscribe'){
                 buttonEle.innerHTML = 'Subscribed';
+                buttonEle.classList.add('is-subscribed')
             }else{
                 buttonEle.innerHTML = 'Subscribe';
+                buttonEle.classList.remove('is-subscribed');
             }
         }
 
         function calculateTotal(){
-            const ip = document.querySelector('.shipping-input');
+            const ip = document.querySelector('.cost-input');
             const op = document.querySelector('.shipping-charge');
 
             let costOfOrder = Number(ip.value);
