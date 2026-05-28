@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const arr = [1,2,3,4]
+    doubleArray(arr);
+
+    function doubleArray(nums){
+        const doubleArr = [];
+        for(let num of nums){
+            doubleArr.push(num * 2);
+        }
+        console.log(doubleArr);
+    }
+
+    const A2 = [1, 2, 3, 4, 5];
+    const [first, second, third] = A2;  //destructuring
+
+    console.log(first);
+
+    const A3 = A2.slice();  //copy of the array object
+
+    function isPrime(n){
+        if(n <= 1) return false;
+        for(let i = 2; i <= Math.sqrt(n); i++){
+            if(n % i == 0) return false;
+        }
+        return true;
+    }
+
+    console.log(isPrime(9));
+    
+</script>
+</html>
