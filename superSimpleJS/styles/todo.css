@@ -1,0 +1,33 @@
+body {
+    font-family: Arial;
+}
+
+.display, .input-grid {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.input-grid {
+    margin-bottom: 10px;
+}
+
+.inputField, .dateField {
+    font-size: 15px;
+    padding: 10px;
+}
+
+.addButton, .deleteButton {
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 13px 0px;
+}
+.deleteButton {
+    background-color: red;
+    padding: 10px 0px;
+}
