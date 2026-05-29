@@ -40,7 +40,7 @@
     //functions
 
     //no hoisting(accessing before creation) for this syntax
-    const f1 = function (){         //dont need a function name as long as we store it somewhere
+    const f1 = function (){         //anonymous fn: dont need a function name as long as we store it somewhere
         console.log('Hello there');
     }
     f1();
@@ -51,6 +51,48 @@
     function f2(){
         console.log("I allow hoisting");
     }
+
+    //saving inside objects
+    const obj1 = {
+        num: 2,
+        fun: function(){           //method: function inside an object
+            console.log("Hello 3");
+        }
+    }
+    obj1.fun();
+
+    //functions with parameter
+    function display(param){
+        console.log(param);
+    }
+    display('what a day man');
+
+    //function inside function
+    function run(param){         //functions passed inside a function is a: CALLBACK!!!!!!
+        param();
+    }
+
+    run(function() {
+        console.log('i am inside');
+    })
+
+
+    //settimeout() : asynchronous
+
+    setTimeout(function() {
+        console.log("i ran after timeout");
+        console.log("Everything inside me runs synchronously");  //inside: line by line
+    }, 3000);
+
+    //anything after setTimeout() runs without wait
+    console.log("See i ran first")
+
+    //same as setTimeout - inside content runs after every interval
+    //the code that follows runs normally
+    setInterval(function(){
+        console.log('After every 3 sec');
+    }, 3000);
+
     
 </script>
 </html>

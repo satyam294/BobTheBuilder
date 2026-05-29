@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Autoplay</title>
+    <link rel="stylesheet" href="styles/rps_autoplay.css" >
+</head>
+<body>
+    <p class="title">Rock Paper Scissors</p>
+    <button class="move-button" onclick=" playGame('rock')" id="rock">
+        <img class="move-icon" src="rps-images/rock-emoji.png">
+    </button>
+    <button class="move-button" onclick="playGame('paper')" id="paper">
+        <img class="move-icon" src="rps-images/paper-emoji.png">
+    </button>
+    <button class="move-button" onclick="playGame('scissors')" id="scissors">
+        <img class="move-icon" src="rps-images/scissors-emoji.png">
+    </button>
+
+    <p id ='results'>Results</p>
+    <p id='moves'>Moves Made</p>
+    <p id ='scorecard'>ScoreCard</p>
+
+    <button class="reset-score" onclick = "updateScoreOnReset()">
+        Reset Score
+    </button>
+    <button class="auto-play" onclick = "autoPlay();">
+        Auto Play
+    </button>
+
+<script src="scripts/rps_autoplay.js"></script>
+</body>
+
+</html>
